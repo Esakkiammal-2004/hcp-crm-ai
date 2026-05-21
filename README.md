@@ -1,6 +1,4 @@
-                                       HCP CRM Agent 
-                                       
-HCP CRM Agent - LangGraph + Groq
+                                   HCP CRM Agent - LangGraph + Groq
 
 AI-powered assistant for pharma sales reps to automate CRM logging, email drafting, and follow-up scheduling using natural language.
 
