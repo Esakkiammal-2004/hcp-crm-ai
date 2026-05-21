@@ -1,9 +1,9 @@
 HCP CRM Agent - LangGraph + Groq
 
-AI-powered assistant that automates CRM logging, follow-up emails, and meeting scheduling for pharma sales reps using natural language.
+AI-powered assistant that automates CRM logging, follow-up , and meeting scheduling for pharma sales reps using natural language.
 
 📋 Project Overview
-Sales reps spend 2+ hours daily on manual CRM updates after doctor visits. This agent takes meeting notes in plain English and autonomously executes 3+ backend tasks using LangGraph + Groq. One paragraph input → CRM updated, email sent, next meeting booked.
+Sales reps spend 2+ hours daily on manual CRM updates after doctor visits. This agent takes meeting notes in plain English and autonomously executes 3+ backend tasks using LangGraph + Groq. One paragraph input → CRM updated, next meeting booked.
 
 🛠️ LangGraph Tools Implemented
 This project demonstrates all 5 required tools:
