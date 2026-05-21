@@ -12,7 +12,7 @@ This project demonstrates all 5 required tools:
 | --- | --- |
 | `get_hcp_data` | Fetches HCP profile & history from CRM |
 | `log_interaction` | Saves meeting summary to CRM database |
-| `generate_email` | Creates personalized follow-up email draft |
+| `generate_email` | Creates personalized follow-up  |
 | `schedule_followup` | Books next meeting in Google/Outlook calendar |
 | `send_email` | Sends the drafted email to HCP |
 
