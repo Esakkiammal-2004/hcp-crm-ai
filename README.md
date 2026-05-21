@@ -1,38 +1,49 @@
-# HCP CRM AI - MailGeek AI
+                                       HCP CRM Agent 
+                                       
+HCP CRM Agent - LangGraph + Groq
 
-HCP CRM AI - MailGeek AI
+AI-powered assistant for pharma sales reps to automate CRM logging, email drafting, and follow-up scheduling using natural language.
 
-AI-powered CRM system for Healthcare Professionals with automated email generation using LangGraph agents.
+🎯 Problem
+Sales reps waste 2+ hours daily on manual CRM updates after HCP meetings. This kills productivity and delays follow-ups.
 
-🚀 Tech Stack
+💡 Solution
+Type meeting notes in plain English. Our LangGraph agent uses Groq LLM to understand intent and autonomously calls the right tools. One paragraph → CRM logged, email drafted, next meeting booked.
 
-- **Frontend**: React JS 18
-- **Backend**: Python FastAPI  
-- **AI Framework**: LangGraph
-- **Database**: SQLite
-- **API**: REST API
+🛠️ Tools Used
+| Tool | Function |
+| --- | --- |
+| `get_hcp_data` | Fetch HCP details from CRM |
+| `log_interaction` | Save meeting notes to CRM |
+| `generate_email` | Draft personalized follow-up email |
+| `schedule_followup` | Book next meeting in calendar |
+| `send_email` | Send the drafted email |
 
-✨ Features
+🚀 How to Use
+1. **Fill Form**: HCP Name, Date, Topics, Drug, Feedback
+2. **AI Assistant**: Paste interaction summary
+   Met Dr. Esakkiammal today on 21-05-2026. Discussed Carditane 10mg for hypertension. 
+   Log this interaction to CRM, draft a personalized follow-up email, and schedule next meeting.
+3. **Click Send**: Agent triggers tool chain: `get_hcp_data` → `log_interaction` → `generate_email` → `schedule_followup`
+4. **Output**: See CRM confirmation, email draft, and calendar invite
 
-1. **AI Email Generation** - Generate personalized emails for HCPs using LangGraph agents
-2. **CRM Dashboard** - Manage Healthcare Professional data
-3. **HCP Database** - Store and retrieve HCP details
-4. **LangGraph Tools Integration** - 5 custom tools for email automation
-5. **Automated Follow-ups** - Track and manage email interactions
+⚙️ Tech Stack
+- **Agent Framework**: LangGraph 
+- **LLM**: Llama 3 70B via Groq API
+- **Backend**: FastAPI + Python
+- **Tools**: Custom CRM + Email + Calendar APIs
 
-🛠️ LangGraph Tools Implemented
+⚡ Quick Start
+1. Clone repo: `git clone https://github.com/your-username/hcp-crm-agent-langgraph.git`
+2. Install: `pip install -r requirements.txt`
+3. Add `.env`: `GROQ_API_KEY=your_key_here`
+4. Run: `uvicorn main:app --reload`
+5. Open: `http://localhost:9000`
 
-This project uses LangGraph agents with 5 custom tools:
 
-1. **HCP Data Fetcher** - Retrieves HCP details from database
-2. **Email Content Generator** - Creates personalized email content using AI
-3. **Interaction Logger** - Logs all email interactions to database
-4. **Follow-up Scheduler** - Schedules automated follow-up emails
-5. **Email Sender** - Sends emails via SMTP/API integration
-
-📦 Project Structure
-
-hcp-crm-ai/
+ structure
+ 
+ hcp-crm-ai/
 ├── backend/
 │ ├── http://agent.py # LangGraph agent implementation
 │ ├── http://database.py # SQLite database setup
@@ -47,40 +58,18 @@ hcp-crm-ai/
     │ └── http://index.html # HTML template
     └── http://package.json # Frontend dependencies
 
-🔧 How to Run Locally
-
-Backend Setup 
+Backend Setup:
 
 ```bash
 cd backend
 pip install fastapi uvicorn langgraph langchain sqlite3 python-dotenv
 python main.py
-Backend runs on `http://localhost:8000`
+py -m uvicorn main:app --reload --port 9000
 
-Frontend Setup :
-
+Frontend Setup:
 cd frontend
 npm install
 npm start
-Frontend runs on `http://localhost:3000`
-
-📹 Demo
-
-The application demonstrates:
-1. Frontend UI for HCP management
-2. LangGraph agent execution with all 5 tools
-3. Real-time email generation and logging
-4. Complete workflow from HCP selection to email delivery
-
-📝 Note
-
-This is a local development project created for submission purposes. The application requires local setup and is not deployed on cloud.
-
-👨‍💻 Submission Details
-
-- *Project*: HCP CRM AI Task
-- *Framework*: LangGraph + React + FastAPI
-- *Status*: Local Development Complete
-
-
-**உன் `agent.py` ல வேற 5 Tools இருந்தா `LangGraph Tools Implemented` Section மட்டும் மாத்திக்கோ** 🚀
+---
+**Built for Groq x LangGraph Hackathon 2026**
+---
