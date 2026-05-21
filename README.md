@@ -1,60 +1,65 @@
 HCP CRM Agent - LangGraph + Groq
 
-AI-powered assistant for pharma sales reps to automate CRM logging, email drafting, and follow-up scheduling using natural language.
+AI-powered assistant that automates CRM logging, follow-up emails, and meeting scheduling for pharma sales reps using natural language.
 
-🎯 Problem
-Sales reps waste 2+ hours daily on manual CRM updates after HCP meetings. This kills productivity and delays follow-ups.
+📋 Project Overview
+Sales reps spend 2+ hours daily on manual CRM updates after doctor visits. This agent takes meeting notes in plain English and autonomously executes 3+ backend tasks using LangGraph + Groq. One paragraph input → CRM updated, email sent, next meeting booked.
 
-💡 Solution
-Type meeting notes in plain English. Our LangGraph agent uses Groq LLM to understand intent and autonomously calls the right tools. One paragraph → CRM logged, email drafted, next meeting booked.
+🛠️ LangGraph Tools Implemented
+This project demonstrates all 5 required tools:
 
-🛠️ Tools Used
-| Tool | Function |
+| Tool Name | Purpose |
 | --- | --- |
-| `get_hcp_data` | Fetch HCP details from CRM |
-| `log_interaction` | Save meeting notes to CRM |
-| `generate_email` | Draft personalized follow-up email |
-| `schedule_followup` | Book next meeting in calendar |
-| `send_email` | Send the drafted email |
+| `get_hcp_data` | Fetches HCP profile & history from CRM |
+| `log_interaction` | Saves meeting summary to CRM database |
+| `generate_email` | Creates personalized follow-up email draft |
+| `schedule_followup` | Books next meeting in Google/Outlook calendar |
+| `send_email` | Sends the drafted email to HCP |
 
-🚀 How to Use
-1. **Fill Form**: HCP Name, Date, Topics, Drug, Feedback
-2. **AI Assistant**: Paste interaction summary
-   Met Dr. Esakkiammal today on 21-05-2026. Discussed Carditane 10mg for hypertension. 
-   Log this interaction to CRM, draft a personalized follow-up email, and schedule next meeting.
-3. **Click Send**: Agent triggers tool chain: `get_hcp_data` → `log_interaction` → `generate_email` → `schedule_followup`
-4. **Output**: See CRM confirmation, email draft, and calendar invite
+🚀 How to Run
+1. Prerequisites
+- Python 3.10+
+- Groq API Key
 
-⚙️ Tech Stack
-- **Agent Framework**: LangGraph 
-- **LLM**: Llama 3 70B via Groq API
-- **Backend**: FastAPI + Python
-- **Tools**: Custom CRM + Email + Calendar APIs
+2. Setup
+```bash
+git clone https://github.com/[your-username]/hcp-crm-agent-langgraph.git
+cd hcp-crm-agent-langgraph
+pip install -r requirements.txt
+3. Environment
+Create `.env` file:
+GROQ_API_KEY=your_groq_key_here
+4. Start App
+uvicorn main:app --reload
+Open `http://localhost:8000`
 
-⚡ Quick Start
-1. Clone repo: `git clone https://github.com/your-username/hcp-crm-agent-langgraph.git`
-2. Install: `pip install -r requirements.txt`
-3. Add `.env`: `GROQ_API_KEY=your_key_here`
-4. Run: `uvicorn main:app --reload`
-5. Open: `http://localhost:9000`
+🧪 How to Test - Demo Flow
+1. *Fill Form*: HCP Name: `Dr. Esakkiammal`, Date: `21-05-2026`, Drug: `Carditane 10mg`
+2. *AI Assistant Input*:
+   Met Dr. Esakkiammal today. Discussed Carditane 10mg efficacy and new hypertension guidelines. 
+   Positive feedback. Log this interaction to CRM, draft a personalized follow-up email, 
+   and schedule next meeting for next week.
+3. *Click Send*: Watch backend terminal. Agent will call: `get_hcp_data` → `log_interaction` → `generate_email` → `schedule_followup`
+4. *Verify Output*: Check response for CRM log confirmation, email draft, and calendar event.
 
-
- structure
- 
- hcp-crm-ai/
+📁 Project Structure
 ├── backend/
-│ ├── http://agent.py # LangGraph agent implementation
-│ ├── http://database.py # SQLite database setup
-│ ├── http://main.py # FastAPI server
-│ └── tools/
-│ └── log_interaction.py # Custom LangGraph tools
-└── frontend/
-    ├── src/
-    │ ├── http://App.js # Main React component
-    │ └── http://index.js # React entry point
-    ├── public/
-    │ └── http://index.html # HTML template
-    └── http://package.json # Frontend dependencies
+│ ├── agent.py # LangGraph agent + 5 tools definition
+│ ├── main.py # FastAPI endpoints
+│ └── tools/ # CRM, Email, Calendar tool logic
+├── frontend/
+│ └── index.html # Simple UI for demo
+├── requirements.txt
+└── README.md
+🏗️ Code Explanation
+`agent.py` uses LangGraph's `StateGraph` to create an autonomous agent. The Groq LLM with Llama-3-70B analyzes the user prompt, decides the tool sequence, and executes them. No hardcoding - the LLM chooses tools based on context.
+
+💡 Task Understanding
+The goal was to build a multi-tool LangGraph agent that solves a real business problem. This HCP CRM agent proves LLMs can replace manual workflows by chaining API calls autonomously from natural language, saving 2+ hours per rep per day.
+
+---
+*Built for Groq x LangGraph Hackathon 2026*
+
 
 Backend Setup:
 
