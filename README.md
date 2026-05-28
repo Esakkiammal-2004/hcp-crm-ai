@@ -16,6 +16,12 @@ This project demonstrates all 5 required tools:
 | `schedule_followup` | Books next meeting in Google/Outlook calendar |
 | `send_email` | Sends the drafted email to HCP |
 
+### 🚀 Tech Stack
+- **Frontend:** React.js, Tailwind CSS
+- **Backend:** Python, Flask, REST API
+- **Database:** MySQL 
+- **AI:** OpenAI API for smart customer insights
+
 🚀 How to Run
 1. Prerequisites
 - Python 3.10+
@@ -57,10 +63,6 @@ Open `http://localhost:8000`
 💡 Task Understanding
 The goal was to build a multi-tool LangGraph agent that solves a real business problem. This HCP CRM agent proves LLMs can replace manual workflows by chaining API calls autonomously from natural language, saving 2+ hours per rep per day.
 
----
-*Built for Groq x LangGraph Hackathon 2026*
-
-
 Backend Setup:
 
 ```bash
@@ -74,5 +76,4 @@ cd frontend
 npm install
 npm start
 ---
-**Built for Groq x LangGraph Hackathon 2026**
----
+
