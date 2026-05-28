@@ -16,17 +16,22 @@ This project demonstrates all 5 required tools:
 | `schedule_followup` | Books next meeting in Google/Outlook calendar |
 | `send_email` | Sends the drafted email to HCP |
 
+
 ### 📸 Live Demo - AI in Action
 
 **Before: Empty Form + AI Chat**
 ![AI Chat Interface](./ai-demo-before1-a.png)
+
 ![AI Chat Interface](./ai-demo-before1-b.png)
 
 **After: CRM Form Auto-Filled by AI** 
 ![Auto Filled Form](./ai-demo-after1-a.png)
+
 ![Auto Filled Form](./ai-demo-after1-b.png)
 
+
 *The LangGraph agent converts "new diabetes drug GlycoStat discussed" into structured CRM data automatically. Saves 2+ hours of manual work daily.*
+
 
 
 ### 🚀 Tech Stack
