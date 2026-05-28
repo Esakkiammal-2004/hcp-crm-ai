@@ -20,11 +20,13 @@ This project demonstrates all 5 required tools:
 ### 📸 Live Demo - AI in Action
 
 **Before: Empty Form + AI Chat**
+
 ![AI Chat Interface](./ai-demo-before1-a.png)
 
 ![AI Chat Interface](./ai-demo-before1-b.png)
 
 **After: CRM Form Auto-Filled by AI** 
+
 ![Auto Filled Form](./ai-demo-after1-a.png)
 
 ![Auto Filled Form](./ai-demo-after1-b.png)
