@@ -39,7 +39,7 @@ This project demonstrates all 5 required tools:
 ### 🚀 Tech Stack
 - **Frontend:** React.js, Tailwind CSS
 - **Backend:** Python, Flask, REST API
-- **Database:** MySQL 
+- **Database:** PostgreSQL 
 - **AI:** OpenAI API for smart customer insights
 
 🚀 How to Run
